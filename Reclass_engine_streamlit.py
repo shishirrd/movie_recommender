@@ -4,10 +4,16 @@ import pandas as pd
 import numpy as np
 from datetime import *
 
-st.write('Please ensure your dataset is rectangular and has no blank rows at the top. CSV files preferred.')
+st.title("Welcome to my expense reclassification app!")
+st.subheader("Made with love by Shishir R Deshpande.")
+st.write('Please ensure your dataset is rectangular and has no blank rows at the top. CSV files preferred. Output dataframe can be viewed & downloaded from the bottom of this page!')
 uploaded_file = st.file_uploader("Upload file")
 
 df = pd.read_csv(uploaded_file)
+
+st.write("The column headers in your dataset are...")
+st.write(df.columns)
+st.write("You can use a maximum of 4 different fields and categories for reclassification.")
 
 current_date_and_time = datetime.now()
 current_date_and_time = current_date_and_time.strftime("%Y-%m-%d %H:%M:%S")
@@ -16,8 +22,7 @@ current_date_and_time_string = str(current_date_and_time)
 extension = ".csv"
 
 #Specify classification categories
-st.write("Please type field names exactly as they appear in your base dataset.")
-st.write("Please enter keywords and separate them by a '|'")
+st.subheader("Please type category names, field names and your keywords. Field names need to be exact and keywords need to be separated by a '|'")
 Category1 = st.text_input("Name classification category 1", "Communication")
 field1 = st.text_input("Input field-name in which to search for category 1 keywords", "entry description")
 keywords1 = st.text_input("Type keywords to search in category 1", "keywords")
@@ -25,10 +30,10 @@ Category2 = st.text_input("Name classification category 2", "Travel")
 field2 = st.text_input("Input field-name in which to search for category 2 keywords", "supplier")
 keywords2 = st.text_input("Type keywords to search in category 2", "keywords")
 Category3 = st.text_input("Name classification category 3", "Professional")
-field3 = st.text_input("Input field-name in which to search for category 3 keywords", "PO description")
+field3 = st.text_input("Input field-name in which to search for category 3 keywords", "entry description")
 keywords3 = st.text_input("Type keywords to search in category 3", "keywords")
 Category4 = st.text_input("Name classification category 4", "Power, fuel & water")
-field4 = st.text_input("Input field-name in which to search for category 4 keywords", "PO description")
+field4 = st.text_input("Input field-name in which to search for category 4 keywords", "entry description")
 keywords4 = st.text_input("Type keywords to search in category 4", "keywords")
 
 #Convert field 1 to lowercase
