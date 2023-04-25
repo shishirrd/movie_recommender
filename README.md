@@ -1,2 +1,2 @@
 # Movie Recommender
-This is the Streamlit app that uses KNN to cluster movies that a user liked and recommends the movies based on movie that was selected. 
+This is the Streamlit app that allows a user to select a movie that they like and then uses KNN to cluster movies and recommend similar ones that a user may like.
