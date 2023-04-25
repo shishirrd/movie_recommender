@@ -6,24 +6,13 @@ import streamlit as st
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
-#import plotly.graph_objs as go
-#import plotly.express as px
-
 ratings = pd.read_csv("ratings.csv")
-#ratings.head()
 
 movies = pd.read_csv("movies.csv")
-#movies.head()
 
 n_ratings = len(ratings)
 n_movies = len(ratings['movieId'].unique())
 n_users = len(ratings['userId'].unique())
-
-#print(f"Number of ratings: {n_ratings}")
-#print(f"Number of unique movieId's: {n_movies}")
-#print(f"Number of unique users: {n_users}")
-#print(f"Average ratings per user: {round(n_ratings/n_users, 2)}")
-#print(f"Average ratings per movie: {round(n_ratings/n_movies, 2)}")
 
 user_freq = ratings[['userId', 'movieId']].groupby('userId').count().reset_index()
 user_freq.columns = ['userId', 'n_ratings']
@@ -32,16 +21,12 @@ user_freq.head()
 
 # Find Lowest and Highest rated movies:
 mean_rating = ratings.groupby('movieId')[['rating']].mean()
+
 # Lowest rated movies
 lowest_rated = mean_rating['rating'].idxmin()
-#movies.loc[movies['movieId'] == lowest_rated]
+
 # Highest rated movies
 highest_rated = mean_rating['rating'].idxmax()
-#movies.loc[movies['movieId'] == highest_rated]
-# show number of people who rated movies rated movie highest
-#ratings[ratings['movieId']==highest_rated]
-# show number of people who rated movies rated movie lowest
-#ratings[ratings['movieId']==lowest_rated]
 
 ## the above movies has very low dataset. We will use bayesian average
 movie_stats = ratings.groupby('movieId')[['rating']].agg(['count', 'mean'])
