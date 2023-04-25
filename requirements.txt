@@ -1,4 +1,4 @@
-#enable app in heroku
+#enable app in streamlit
 streamlit
 pandas
 numpy
