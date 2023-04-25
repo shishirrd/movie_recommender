@@ -6,4 +6,5 @@ python-dateutil
 datetime
 pybase64
 statsmodels
-sklearn
+scikit-learn
+scipy
