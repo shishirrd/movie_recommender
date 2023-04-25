@@ -1,13 +1,13 @@
 from setuptools import setup
 
 setup(
-	name='expense_reclassification_streamlit_app',
+	name='movie_recommender',
 	author = 'Shishir Deshpande',
-	packages = ['expense_reclassification',],
-	package_dir = {'expense_reclassification':'expense_reclassification',},
-	package_data = {'expense_reclassification':['mappings/*.csv','sql/*.txt']},
+	packages = ['movie_recommender',],
+	package_dir = {'movie_recommender':'movie_recommender',},
+	package_data = {'movie_recommender':['mappings/*.csv','sql/*.txt']},
 	version='0.0.1',
-	description = 'library to help classify transactions',
+	description = 'App to recommend movies <2009',
 	install_requires=[
         'pandas>=1.2.4',
         'numpy>=1.21.1',
