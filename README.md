@@ -1,2 +1,2 @@
-# expense_reclass_streamlit
-This is the Streamlit app for reclassifying transactions/items in large dumps. Current limit is four fields and categories. This reclassification engine is a powerful tool to classify transactions into their actual categories. Due to the modular nature of the code and libraries used, this can be applied to pretty much any transaction-level file such as GL dumps, bank statements etc.
+# Movie Recommender
+This is the Streamlit app that uses KNN to cluster movies that a user liked and recommends the movies based on movie that was selected. 
